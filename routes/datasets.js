@@ -7,6 +7,7 @@ var express = require("express"),
 
 // GET request to push data to the dataset
 router.get("/update", function(req, res) {
+    console.log('Receive update request');
     // Get values from request arguments
     var apiKey = req.query.key;
     delete req.query.key; // flush api key value so we only keep values concerning variables
