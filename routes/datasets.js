@@ -38,7 +38,8 @@ router.get("/update", function(req, res) {
                     res.sendStatus(-1);
                 } else {
                     console.log("New entry for dataset with API key: " + apiKey);
-                    res.sendStatus(1);
+                    //res.sendStatus(1);
+                    res.sendStatus(200);
                 }
             });
         } else {
