@@ -195,6 +195,7 @@ router.put("/:id/", helper.authenticate, function(req, res) {
             public: isPublic
         }
         // If variable in request body and not in dataset, add to setList (or if no variable at all in dataset)
+        req.body = JSON.parse(JSON.stringify(req.body));
         for (var property in req.body) {
             if (!dataset.data||(req.body.hasOwnProperty(property)&!dataset.data.hasOwnProperty(property))) {
                 console.log(property)
