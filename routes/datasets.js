@@ -139,6 +139,7 @@ router.post("/", helper.authenticate, function(req, res) {
     // We do that so that the fields are saved in the right order on the db
     // (this way it will appear in the right order on the 'edit' view)
     var propertiesList = [];
+    req.body = JSON.parse(JSON.stringify(req.body));
     for (var property in req.body) {
         if (req.body.hasOwnProperty(property)) {
             propertiesList.push(property);
